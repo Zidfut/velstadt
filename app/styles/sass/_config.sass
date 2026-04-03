@@ -1,0 +1,95 @@
+// USER VARIABLES SECTION
+
+$accent: orange // Accent Color
+$fontsize: 16px // Body Font Size
+$textcolor: #a7a4b5 // Text Color
+$lineheight: 1.65 // Document Line Height
+$userfont: inter, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+$dark: #0e0d12
+$gray: #a7a4b5
+$violet: #6d4aff
+$violet2: #7c5cff
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
+@include font('roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+@include font('roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
+@include font('roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+
+@include font('inter', normal, 400, '../fonts/inter-regular.woff2')
+@include font('inter', normal, 500, '../fonts/inter-medium.woff2')
+@include font('inter', normal, 600, '../fonts/inter-semibold.woff2')
+
+@include font('oswald', normal, 400, '../fonts/oswald-regular.woff2')
+
+
+
+// GENERAL CSS SETTINGS
+
+::placeholder
+	color: #6d697d
+
+::selection
+	background-color: $violet
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+	background-color: $dark
+	padding-top: 80px
+
+.container
+	max-width: 1280px
+	margin: 0 auto
+	padding-inline: 16px
+
+	@media (min-width: 768px)
+		padding-inline: 24px
+
+	@media (min-width: 1024px)
+		padding-inline: 32px
+
+	
+a
+	text-decoration: none
+	color: inherit
+
+.no-scroll
+	overflow-y: hidden
+
+
+// html
+// 	scrollbar-width: thin
+// 	scrollbar-color: hsla(0, 0%, 100%, .27) transparent

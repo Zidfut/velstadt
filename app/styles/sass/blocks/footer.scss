@@ -1,0 +1,177 @@
+.footer {
+    padding-block: 96px 32px;
+    background-color: #16141c;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #a7a4b5;
+    
+
+    @media(max-width: 764px){
+        padding-block: 64px 16px;
+        font-size: 14px;
+    }
+
+    &__top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-bottom: 32px;
+        border-bottom: 1px solid #343140;
+
+        @media(max-width: 764px){
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 32px;
+        }
+
+        &-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 32px;
+        }
+
+        &-right {
+            ul {
+                list-style: none;
+                padding-left: 0;
+                margin: 0;
+                li {
+                    position: relative;
+                    padding-left: 24px;
+                    margin-bottom: 12px;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 5px;
+                        width: 16px;
+                        height: 16px;
+                        background-color: #a7a4b5;
+                        mask: url('../images/src/check.svg') no-repeat center;
+                        mask-size: contain;
+                    }
+                }
+            }
+        }
+    }
+
+    &__text {
+        max-width: 384px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #a7a4b5;
+        
+        p {
+            margin-bottom: 5px;
+        }
+    }
+
+    &__socials {
+        &-list {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 24px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        &-icon {
+            display: block;
+            width: 24px;
+            height: 24px;
+            mask-size: contain;
+            background-color: #a7a4b5;
+            transition: background-color 0.3s ease;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            @media(hover: hover) {
+                &:hover {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-block: 32px;
+        gap: 32px;
+        border-bottom: 1px solid #343140;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+
+        @media(max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        &-item {
+            min-width: 280px;
+        }
+        
+        a {
+            transition: .3s ease;
+
+            @media(hover: hover) {
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 32px;
+
+        @media(max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 24px;
+        }
+    }
+
+    h3 {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #fff;
+        margin-bottom: 16px;
+    }
+
+    &__policy {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 24px;
+
+        a {
+            transition: .3s ease;
+
+            @media(hover: hover) {
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

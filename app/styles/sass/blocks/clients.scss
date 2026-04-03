@@ -1,0 +1,39 @@
+.clients {
+    padding-block: 96px;
+
+    @media(max-width: 768px){
+        padding-block: 60px;
+    }
+
+    &__swiper {
+        &.swiper {
+            mask-image: linear-gradient(
+                to right,
+                transparent 0%,
+                #fff 10%,
+                #fff 90%,
+                transparent 100%
+            );
+        }
+
+        .swiper-wrapper {
+            transition-timing-function: linear;
+            align-items: center;
+        }
+
+        .swiper-slide {
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .swiper-slide img {
+            max-width: 100%;
+        }
+    }
+
+    .section__subtitle {
+        margin-bottom: 32px;
+    }
+}
