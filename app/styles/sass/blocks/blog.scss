@@ -191,4 +191,62 @@
             }
         }
     }
+
+    &__pagination {
+        margin-top: 48px;
+        width: 100%;
+
+        &-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        &-arrows {
+            display: block;
+            height: 48px;
+            width: 48px;
+            border: 1px solid #3f3b4c;
+            border-radius: 8px;
+            margin: 0 24px;
+            background-color: #16141c;
+            background-image: url('../images/dist/arrow-right.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: .3s ease;
+
+            @media(max-width: 768px){
+                width: 40px;
+                height: 40px;
+            }
+
+            @media(hover: hover) {
+                &:hover {
+                    background-color: #25232c;
+                }
+            }
+
+            &.disabled {
+                background-color: transparent;
+                opacity: 0.3;
+            }
+
+            &.prev {
+                transform: rotate(180deg);
+            }   
+        }
+
+        &-numbers {
+            &.current {
+                opacity: 0.3;
+            }
+
+            @media(hover: hover) {
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
 }
