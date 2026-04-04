@@ -1,53 +1,50 @@
 .blog {
-    // display: flex;
-    // align-items: flex-start;
-    // justify-content: space-between;
-    // gap: 32px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
 
     @media(max-width: 1024px){
-        // gap: 24px;
+        gap: 24px;
     }
 
     @media(max-width: 767px){
-        // position: initial;
-        // flex-direction: column;
-        // justify-content: flex-start;
+        position: initial;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     &__categories {
-        // width: 280px;
-        // flex-shrink: 0;
-        // position: sticky;
-        // top: 100px;
-        margin-bottom: 100px;
+        width: 280px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 100px;
 
         @media(max-width: 1024px){
-            // width: 200px;
+            width: 200px;
         }
 
         @media(max-width: 767px){
-            // position: initial;
-            // width: 100%;
+            position: initial;
+            width: 100%;
         }
 
         ul {
             display: flex;
-            // flex-direction: column;
-            // align-items: stretch;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: stretch;
             justify-content: flex-start;
             gap: 4px;
             margin: 0;
             padding: 0;
             list-style: none;
-            overflow-x: auto;
-            touch-action: pan-x;
 
-            // @media(max-width: 767px){
-            //     flex-direction: row;
-            //     align-items: flex-start;
-            //     gap: 16px;
-            // }
+            @media(max-width: 767px){
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 16px;
+                overflow-x: auto;
+            }
 
             a {
                 display: flex;
@@ -67,17 +64,17 @@
                     white-space: nowrap;
                 }
 
-                // &.active {
-                //     color: #fff;
-                //     background-color: rgba(91, 87, 107, 0.4);
-                // }
+                &.active {
+                    color: #fff;
+                    background-color: rgba(91, 87, 107, 0.4);
+                }
 
-                // @media(hover: hover) {
-                //     &:not(.active):hover {
-                //         color: #fff;
-                //         background-color: rgba(91, 87, 107, 0.2);
-                //     }
-                // }
+                @media(hover: hover) {
+                    &:not(.active):hover {
+                        color: #fff;
+                        background-color: rgba(91, 87, 107, 0.2);
+                    }
+                }
             }
         }
     }
