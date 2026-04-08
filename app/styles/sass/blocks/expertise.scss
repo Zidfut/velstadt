@@ -2,18 +2,18 @@
     padding-top: 96px;
 
     &__inner {
-        padding: 64px 64px 0;
+        padding: 64px;
         background-color: #16141c;
         border-radius: 16px;
 
         @media(max-width: 1024px){
-            padding: 52px 52px 0;
+            padding: 52px;
         }
         @media(max-width: 768px){
-            padding: 36px 36px 0;
+            padding: 36px;
         }
         @media(max-width: 576px){
-            padding: 24px 24px 0;
+            padding: 24px;
         }
     }
 

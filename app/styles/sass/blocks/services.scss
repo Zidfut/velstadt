@@ -1,7 +1,8 @@
 .services {
+    overflow: hidden;
 
     &__swiper {
-        overflow: visible;
+        overflow: visible !important;
 
         &-arrows {
             margin-top: 64px;

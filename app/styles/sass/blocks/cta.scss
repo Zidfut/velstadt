@@ -72,7 +72,7 @@
             line-height: 1.5;
             color: #fff;
             border: 1px solid transparent;
-            transition: .3s ease;
+            transition: color .3s ease, border-color .3s ease, box-shadow .3s ease;
 
             &::placeholder {
                 color: #6d697d;
@@ -163,7 +163,7 @@
         }
 
         .checkmark:after {
-        content: "";
+            content: "";
             position: absolute;
             display: none;
         }
@@ -186,4 +186,75 @@
     }
 
     
+}
+
+.wpcf7-not-valid-tip,
+.wpcf7-response-output,
+.wpcf7-spinner {
+    display: none !important;
+}
+
+.wpcf7-acceptance .wpcf7-list-item {
+    display: block;
+    margin: 0;
+}
+
+.cta__form-accept {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.cta__form-accept + .wpcf7-list-item-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.cta__form-accept + .wpcf7-list-item-label::before {
+    content: none;
+}
+
+.cta__form-accept + .wpcf7-list-item-label .label-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #a7a4b5;
+    cursor: pointer;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.checkbox__container:hover .checkmark  {
+    border-color: #7c5cff;
+}
+
+.cta__form-accept:checked + .wpcf7-list-item-label .checkbox__container .checkmark {
+    border-color: #7c5cff;
+    background-color: #7c5cff;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.cta__form-accept:checked + .wpcf7-list-item-label .checkbox__container .checkmark:after {
+    display: block;
+}
+
+.checkbox__container .checkmark:after {
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    height: 9px;
+    left: 7px;
+    top: 4px;
+    transform: rotate(45deg);
+    width: 5px;
 }
