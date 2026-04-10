@@ -1,0 +1,39 @@
+.error-404 {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 24px;
+        text-align: center;
+    }
+
+    &__code {
+        display: inline-block;
+        font-size: 12rem;
+        line-height: 1;
+        font-weight: 700;
+        color: #6d4aff;
+
+        @media(max-width: 1024px){
+            font-size: 8rem;
+        }
+    }
+
+    h1 {
+        color: #fff;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        height: 48px;
+        font-size: 16px;
+
+        @media(max-width: 576px){
+            width: 100%;
+        }
+    }
+
+    
+}

@@ -119,6 +119,10 @@
 
         &-item {
             min-width: 280px;
+
+            @media(max-width: 1024px){
+                min-width: 200px;
+            }
         }
         
         a {

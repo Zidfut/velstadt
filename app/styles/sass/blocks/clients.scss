@@ -1,8 +1,18 @@
 .clients {
-    padding-block: 96px;
+    padding-block: 96px 0;
 
     @media(max-width: 768px){
-        padding-block: 60px;
+        padding-block: 60px 0;
+    }
+
+    &__container {
+        border-bottom: 1px solid #343140;
+        padding-bottom: 96px;
+
+        @media(max-width: 768px){
+            padding-bottom: 60px;
+        }
+
     }
 
     &__swiper {

@@ -120,7 +120,7 @@
 
         &-btn {
             height: 48px;
-            margin-top: 32px;
+            margin-top: 12px;
         }
 
         .checkbox__container {
@@ -188,10 +188,14 @@
     
 }
 
+// .wpcf7-response-output,
 .wpcf7-not-valid-tip,
-.wpcf7-response-output,
 .wpcf7-spinner {
     display: none !important;
+}
+
+.wpcf7-form-control-wrap {
+    width: 100%;
 }
 
 .wpcf7-acceptance .wpcf7-list-item {
@@ -257,4 +261,38 @@
     top: 4px;
     transform: rotate(45deg);
     width: 5px;
+}
+
+.country-select .flag-dropdown,
+.country-select.inside .selected-flag,
+.country-select ul.country-list {
+    width: 100% !important;
+}
+
+.country-select ul.country-list {
+    background-color: #292733;
+    border: none;
+    overflow-x: hidden;
+}
+
+.country-select ul.country-list {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.country-select ul.country-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.country-name {
+    white-space: normal;
+}
+
+.country-select .country-list li.country {
+    transition: .3s ease;
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: #ffffff;
+    }
 }
