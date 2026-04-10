@@ -1,5 +1,10 @@
 .cta {
 
+    &__inner {
+        margin: 0 auto;
+        max-width: 640px;
+    }
+
     &__form {
         margin: 0 auto;
         border-radius: 16px;
@@ -11,6 +16,10 @@
         gap: 24px;
         padding: 40px;
         max-width: 640px;
+
+        @media(max-width: 768px) {
+            padding: 24px;
+        }
     
         &-col {
             width: 100%;
@@ -112,6 +121,10 @@
                 color: #a7a4b5;
                 cursor: pointer;
 
+                @media(max-width: 768px){
+                    font-size: 14px;
+                }
+
                 a {
                     text-decoration: underline;
                 }
@@ -131,6 +144,7 @@
             cursor: pointer;
             user-select: none;
             overflow: hidden;
+            flex-shrink: 0;
         }
 
         .checkbox__container input {
@@ -185,10 +199,14 @@
         }
     }
 
-    
 }
 
-// .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output,
+.wpcf7 form.aborted .wpcf7-response-output {
+    border: none !important;
+    color: #f64c6b !important;
+}
+
 .wpcf7-not-valid-tip,
 .wpcf7-spinner {
     display: none !important;

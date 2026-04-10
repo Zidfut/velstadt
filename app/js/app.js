@@ -18,30 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})
 
-	var swiperExpertise = new Swiper(".expertise__swiper", {
-		slidesPerView: "auto",
-		spaceBetween: 40,
-		loop: true,
-		speed: 5000,
-		allowTouchMove: false,
-		autoplay: {
-			delay: 1,
-			disableOnInteraction: false
-		}
-	});
-
-	var swiperClients = new Swiper(".clients__swiper", {
-		slidesPerView: "auto",
-		spaceBetween: 30,
-		loop: true,
-		speed: 5000,
-		allowTouchMove: false,
-		autoplay: {
-			delay: 1,
-			disableOnInteraction: false
-		}
-	});
-
 	var swiperServices = new Swiper(".services__swiper", {
 		loop: false,
 		navigation: {

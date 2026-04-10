@@ -15,31 +15,43 @@
 
     }
 
-    &__swiper {
-        &.swiper {
-            mask-image: linear-gradient(
-                to right,
-                transparent 0%,
-                #fff 10%,
-                #fff 90%,
-                transparent 100%
-            );
-        }
+    &__marquee {
+        display: flex;
+        align-items: center;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            #fff 10%,
+            #fff 90%,
+            transparent 100%
+        );
 
-        .swiper-wrapper {
-            transition-timing-function: linear;
-            align-items: center;
+        &::-webkit-scrollbar {
+            display: none;
         }
+    }
 
-        .swiper-slide {
-            width: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    &__carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        padding-right: 32px;
+        will-change: transform;
+        animation: infiniteScroll 30s infinite linear;
 
-        .swiper-slide img {
-            max-width: 100%;
+        &-slide {
+            flex: 0 0 200px;
+
+            @media(max-width: 768px){
+                flex: 0 0 100px;
+            }
+
+            img {
+                max-width: 100%;
+            }
         }
     }
 

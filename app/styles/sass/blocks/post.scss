@@ -200,12 +200,24 @@
         position: sticky;
         top: 96px;
         flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 40px;
 
-        @media (max-width: 768px) {
-            display: none;
+        @media (max-width: 1024px) {
+            max-width: 100%;
+            width: 100%;
+            align-items: center;
         }
 
         .toc {
+
+            @media (max-width: 1024px) {
+                display: none;
+            }
+
             ul {
                 list-style: none;
                 padding: 0;
@@ -233,6 +245,31 @@
                 a:hover {
                     color: #fff;
                 }
+            }
+        }
+    }
+
+    &__form {
+        .cta__form {
+            background-color: transparent;
+            padding: 12px;
+            border-radius: 0;
+
+            @media (max-width: 1024px) {
+                padding: 24px;
+                border-radius: 16px;
+                background-color: #16141c;
+            }
+
+            &-title {
+                color: #fff;
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            &-input,
+            &-textarea {
+                font-size: 14px;
             }
         }
     }

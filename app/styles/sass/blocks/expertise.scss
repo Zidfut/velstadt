@@ -106,6 +106,10 @@
             font-size: 30px;
             text-wrap-style: auto;
         }
+
+        @media(max-width: 576px){
+            font-size: 28px;
+        }
     }
 
     &__description {
@@ -126,36 +130,45 @@
         }
     }
 
-    &__swiper {
-        &.swiper {
-            mask-image: linear-gradient(
-                to right,
-                transparent 0%,
-                #fff 10%,
-                #fff 90%,
-                transparent 100%
-            );
-            margin-bottom: 56px;
+    &__marquee {
+        display: flex;
+        align-items: center;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        mask-image: linear-gradient(
+            to right,
+            transparent 0%,
+            #fff 10%,
+            #fff 90%,
+            transparent 100%
+        );
+        margin-bottom: 56px;
+
+
+        @media(max-width: 768px){
+            margin-bottom: 36px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        padding-right: 32px;
+        will-change: transform;
+        animation: infiniteScroll 30s infinite linear;
+
+        &-slide {
+            flex: 0 0 100px;
 
             @media(max-width: 768px){
-                margin-bottom: 36px;
+                flex: 0 0 80px;
             }
-        }
-
-        .swiper-wrapper {
-            transition-timing-function: linear;
-            align-items: center;
-        }
-
-        .swiper-slide {
-            width: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .swiper-slide img {
-            max-width: 100%;
         }
     }
 
