@@ -165,9 +165,11 @@
 
         &-slide {
             flex: 0 0 100px;
+            width: 100px;
 
             @media(max-width: 768px){
                 flex: 0 0 80px;
+                width: 80px;
             }
         }
     }
