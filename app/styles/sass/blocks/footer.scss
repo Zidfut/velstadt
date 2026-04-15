@@ -101,9 +101,8 @@
     }
 
     &__contacts {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         padding-block: 32px;
         gap: 32px;
         border-bottom: 1px solid #343140;
@@ -112,18 +111,12 @@
         line-height: 1.5;
 
         @media(max-width: 768px) {
+            display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
         }
 
-        &-item {
-            min-width: 280px;
-
-            @media(max-width: 1024px){
-                min-width: 200px;
-            }
-        }
         
         a {
             transition: .3s ease;

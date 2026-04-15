@@ -15,11 +15,9 @@
 
     }
 
-    &__marquee {
+    &__carousel {
         display: flex;
         align-items: center;
-        overflow-x: hidden;
-        scrollbar-width: none;
         mask-image: linear-gradient(
             to right,
             transparent 0%,
@@ -27,34 +25,6 @@
             #fff 90%,
             transparent 100%
         );
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
-
-    &__carousel {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 32px;
-        padding-right: 32px;
-        will-change: transform;
-        animation: infiniteScroll 30s infinite linear;
-
-        &-slide {
-            flex: 0 0 200px;
-            width: 200px;
-
-            @media(max-width: 768px){
-                flex: 0 0 100px;
-                width: 100px;
-            }
-
-            img {
-                max-width: 100%;
-            }
-        }
     }
 
     .section__subtitle {

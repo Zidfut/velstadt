@@ -26,6 +26,15 @@
             }
         }
     }
+
+    &.is-loading {
+        opacity: 0.4;
+        
+        &:disabled {
+            background-color: $violet2 !important;
+            color: #fff !important;
+        }
+    }
     
     &-primary {
         border: none;

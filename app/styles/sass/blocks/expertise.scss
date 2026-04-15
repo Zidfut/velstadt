@@ -1,5 +1,5 @@
 .expertise {
-    padding-top: 96px;
+    padding-bottom: 0;
 
     &__inner {
         padding: 64px;
@@ -130,11 +130,9 @@
         }
     }
 
-    &__marquee {
+    &__carousel {
         display: flex;
         align-items: center;
-        overflow-x: hidden;
-        scrollbar-width: none;
         mask-image: linear-gradient(
             to right,
             transparent 0%,
@@ -148,28 +146,14 @@
         @media(max-width: 768px){
             margin-bottom: 36px;
         }
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
-
-    &__carousel {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 32px;
-        padding-right: 32px;
-        will-change: transform;
-        animation: infiniteScroll 30s infinite linear;
-
+        
         &-slide {
-            flex: 0 0 100px;
-            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            @media(max-width: 768px){
-                flex: 0 0 80px;
-                width: 80px;
+            img {
+                max-width: 100%;
             }
         }
     }

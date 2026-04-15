@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const canvas = document.getElementById('product-bg');
 
 		var ctx = canvas.getContext('2d');
-		var BG  = [8, 7, 14];
+		var BG  = [14, 13, 8];
 
 		var blobs = [
 			{
@@ -224,8 +224,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		var vy = canvas.height / 2;
 		var vr = Math.max(canvas.width, canvas.height) * 0.90;
 		var vg = ctx.createRadialGradient(vx, vy, canvas.width * 0.05, vx, vy, vr);
-		vg.addColorStop(0,    'rgba(0,0,0,0)');
-		vg.addColorStop(0.40, 'rgba(0,0,0,0.02)');
+		vg.addColorStop(0,    'rgba(14,13,18,0)');
+		vg.addColorStop(0.40, 'rgba(14,13,18,0.02)');
 		vg.addColorStop(0.68, 'rgba('+BG[0]+','+BG[1]+','+BG[2]+',0.22)');
 		vg.addColorStop(1,    'rgba('+BG[0]+','+BG[1]+','+BG[2]+',0.88)');
 		ctx.fillStyle = vg;
@@ -273,4 +273,78 @@ document.addEventListener('DOMContentLoaded', () => {
 	mq.addEventListener("change", handleMasonry);
 
 	handleMasonry(mq);
+
+	function initTurnstileCF7() {
+		const form = document.querySelector('.wpcf7 form');
+		const container = document.getElementById('turnstile-container');
+		const submitBtn = form?.querySelector('input[type="submit"]');
+	
+		if (!form || !container || !submitBtn) return;
+	
+		const siteKey = container.dataset.sitekey;
+	
+		let widgetId = null;
+		let captchaVerified = false;
+		let isChecking = false;
+	
+		submitBtn.addEventListener('click', function (e) {
+			if (captchaVerified) return;
+	
+			e.preventDefault();
+			e.stopImmediatePropagation();
+	
+			if (isChecking) return;
+	
+			isChecking = true;
+	
+			submitBtn.disabled = true;
+			submitBtn.classList.add('is-loading');
+	
+			if (widgetId === null) {
+				widgetId = turnstile.render(container, {
+					sitekey: siteKey,
+					theme: 'dark',
+					size: 'flexible',
+	
+					callback: function () {
+						captchaVerified = true;
+						isChecking = false;
+	
+						submitBtn.disabled = false;
+						submitBtn.classList.remove('is-loading');
+	
+						submitBtn.click();
+					},
+	
+					'error-callback': function () {
+						isChecking = false;
+	
+						submitBtn.disabled = false;
+						submitBtn.classList.remove('is-loading');
+					}
+				});
+			}
+		});
+	}
+
+	initTurnstileCF7();
+
+	const splideSliders = document.querySelectorAll('.splide');
+
+	splideSliders.forEach(slider => {
+		new Splide(slider, {
+			type   : 'loop',
+			drag: false,
+			focus  : 'center',
+			arrows  : false,
+			pagination: false,
+			autoWidth : true,
+			gap: 32,
+			autoScroll: {
+				speed: 0.2,
+				pauseOnHover: false,
+				pauseOnFocus: false,
+			},
+		}).mount( window.splide.Extensions );
+	});
 })

@@ -5,11 +5,22 @@
 
 
     &__img {
-        border: 4px solid #343140;
-        border-bottom: none;
-        border-radius: 24px 24px 0 0;
-        overflow: hidden;
+        --breach-frame-radius: 24px;
+        --breach-frame-gap: 15px;
+        --breach-frame-border-width: 1px;
+        --breach-frame-surface: #0e0d12;
+        --breach-frame-glow-angle: -90deg;
+        animation: glow-spin 16s linear infinite;
+        background: linear-gradient(var(--breach-frame-surface) 0 0) padding-box, conic-gradient(from var(--breach-frame-glow-angle), rgba(109, 74, 255, 0) 0deg, rgba(109, 74, 255, .15) 40deg, rgba(109, 74, 255, .9) 90deg, rgba(109, 74, 255, .15) 140deg, rgba(109, 74, 255, 0) 180deg, rgba(109, 74, 255, 0) 1turn) border-box, conic-gradient(from calc(var(--breach-frame-glow-angle) + 180deg), #6d4aff00, #6d4aff26 40deg, #6d4affe6, #6d4aff26 140deg, #6d4aff00 180deg 1turn) border-box;
+        border: var(--breach-frame-border-width) solid transparent;
+        border-bottom: 0;
+        border-radius: calc(var(--breach-frame-radius) + var(--breach-frame-gap)) calc(var(--breach-frame-radius) + var(--breach-frame-gap)) 0 0;
+        box-sizing: border-box;
+        overflow: visible;
+        padding: var(--breach-frame-gap) var(--breach-frame-gap) 0 var(--breach-frame-gap);
+        
         img {
+            border-radius: 24px 24px 0 0;
             display: block;
             width: 100%;
         }
@@ -23,4 +34,16 @@
         left: 0;
         z-index: -1;
     }
+}
+
+@property --breach-frame-glow-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: -90deg;
+}
+
+@keyframes glow-spin {
+  to {
+    --breach-frame-glow-angle: 270deg;
+  }
 }
