@@ -195,6 +195,13 @@
         }
     }
 
+    &__rating {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
     &__sidebar {
         max-width: 280px;
         position: sticky;
