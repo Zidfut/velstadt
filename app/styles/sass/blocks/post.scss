@@ -305,4 +305,53 @@
             }
         }
     }
+
+    &__back {
+        margin-block: 10px 30px;
+    }
+
+    &__subscribe {
+
+        .cta__form {
+            max-width: 100%;
+        }
+
+        .cta__form-col {
+            align-items: flex-end;
+
+            @media(max-width: 768px){
+                flex-direction: row;
+            }
+
+            @media(max-width: 546px){
+                flex-direction: column;
+            }
+
+            .cta__form-item {
+                &:first-child {
+                    width: 80%;
+                }
+                &:last-child {
+                    width: 20%;
+                }
+
+                @media(max-width: 546px){
+                    &:first-child,
+                    &:last-child {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .cta__form-btn {
+            margin: 0;
+            height: 44px;
+            width: 100%;
+        }
+
+        .cta__form-title {
+            margin: 0;
+        }
+    }
 }

@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    white-space: nowrap;
     padding: 10px 14px;
     border-radius: 8px;
     color: #fff;
@@ -49,11 +50,16 @@
     &-secondary {
         background-color: #16141c;
         border: 1px solid #5c5969;
+        gap: 5px;
 
         @media(hover: hover) {
             &:hover {
                 background-color: #25232c;
                 border: 1px solid #807e8a;
+
+                .icon {
+                    background-color: #25232c;
+                }
             }
         }
     }
@@ -67,6 +73,20 @@
                 background-color: rgba(91, 87, 107, 0.2);
                 color: #fff;       
             }
+        }
+    }
+
+    .icon {
+        background-color: #16141c;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        transition: .3s ease;
+
+        &.icon-back {
+            background-image: url('../images/dist/arrow-right.svg');
+            transform: rotate(180deg);
         }
     }
 }
