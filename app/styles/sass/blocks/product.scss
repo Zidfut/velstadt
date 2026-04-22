@@ -10,6 +10,7 @@
         --breach-frame-border-width: 1px;
         --breach-frame-surface: #0e0d12;
         --breach-frame-glow-angle: -90deg;
+        aspect-ratio: 1216 / 673;
         animation: glow-spin 16s linear infinite;
         background: linear-gradient(var(--breach-frame-surface) 0 0) padding-box, conic-gradient(from var(--breach-frame-glow-angle), rgba(109, 74, 255, 0) 0deg, rgba(109, 74, 255, .15) 40deg, rgba(109, 74, 255, .9) 90deg, rgba(109, 74, 255, .15) 140deg, rgba(109, 74, 255, 0) 180deg, rgba(109, 74, 255, 0) 1turn) border-box, conic-gradient(from calc(var(--breach-frame-glow-angle) + 180deg), #6d4aff00, #6d4aff26 40deg, #6d4affe6, #6d4aff26 140deg, #6d4aff00 180deg 1turn) border-box;
         border: var(--breach-frame-border-width) solid transparent;

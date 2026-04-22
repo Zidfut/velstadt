@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		body.classList.toggle('no-scroll');
 	})
 
+	document.querySelectorAll('a[href^="#"]').forEach(link => {
+		link.addEventListener('click', () => {
+			menuBtn.classList.remove('active');
+			headerMenu.classList.remove('active');
+			body.classList.remove('no-scroll');
+		});
+	});
+
 	window.addEventListener('resize', () => {
 		if (window.innerWidth > 768) {
 			menuBtn.classList.remove('active');
@@ -275,55 +283,60 @@ document.addEventListener('DOMContentLoaded', () => {
 	handleMasonry(mq);
 
 	function initTurnstileCF7() {
-		const form = document.querySelector('.wpcf7 form');
-		const container = document.getElementById('turnstile-container');
-		const submitBtn = form?.querySelector('input[type="submit"]');
-	
-		if (!form || !container || !submitBtn) return;
-	
-		const siteKey = container.dataset.sitekey;
-	
-		let widgetId = null;
-		let captchaVerified = false;
-		let isChecking = false;
-	
-		submitBtn.addEventListener('click', function (e) {
-			if (captchaVerified) return;
-	
-			e.preventDefault();
-			e.stopImmediatePropagation();
-	
-			if (isChecking) return;
-	
-			isChecking = true;
-	
-			submitBtn.disabled = true;
-			submitBtn.classList.add('is-loading');
-	
-			if (widgetId === null) {
-				widgetId = turnstile.render(container, {
-					sitekey: siteKey,
-					theme: 'dark',
-					size: 'flexible',
-	
-					callback: function () {
-						captchaVerified = true;
-						isChecking = false;
-	
-						submitBtn.disabled = false;
-						submitBtn.classList.remove('is-loading');
-	
-						submitBtn.click();
-					},
-	
-					'error-callback': function () {
-						isChecking = false;
-	
-						submitBtn.disabled = false;
-						submitBtn.classList.remove('is-loading');
-					}
-				});
-			}
+		const forms = document.querySelectorAll('.wpcf7 form');
+
+		if (!forms.length) return;
+
+		forms.forEach((form) => {
+			const container = form.querySelector('.turnstile-container');
+			const submitBtn = form.querySelector('input[type="submit"]');
+
+			if (!container || !submitBtn) return;
+
+			const siteKey = container.dataset.sitekey;
+
+			let widgetId = null;
+			let captchaVerified = false;
+			let isChecking = false;
+
+			submitBtn.addEventListener('click', function (e) {
+				if (captchaVerified) return;
+
+				e.preventDefault();
+				e.stopImmediatePropagation();
+
+				if (isChecking) return;
+
+				isChecking = true;
+
+				submitBtn.disabled = true;
+				submitBtn.classList.add('is-loading');
+
+				if (widgetId === null) {
+					widgetId = turnstile.render(container, {
+						sitekey: siteKey,
+						theme: 'dark',
+						size: 'flexible',
+
+						callback: function () {
+							captchaVerified = true;
+							isChecking = false;
+
+							submitBtn.disabled = false;
+							submitBtn.classList.remove('is-loading');
+
+							submitBtn.click();
+						},
+
+						'error-callback': function () {
+							isChecking = false;
+
+							submitBtn.disabled = false;
+							submitBtn.classList.remove('is-loading');
+						}
+					});
+				}
+			});
 		});
 	}
 

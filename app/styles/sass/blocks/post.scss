@@ -199,7 +199,32 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        gap: 10px;
+
+        .rmp-widgets-container.rmp-wp-plugin.rmp-main-container {
+            margin: 0;
+        }
+
+        .rmp-rating-widget {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+
+        .rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-rating-widget__msg,
+        .rmp-rating-widget__results.js-rmp-results,
+        .rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-rating-widget__icons,
+        .rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-rating-widget__results  {
+            margin: 0;
+        }
+
+        .rmp-rating-widget__results__votes.js-rmp-vote-count {
+            display: none;
+        }
+        
+        .rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-rating-widget__icons-list {
+            line-height: 0;
+        }
     }
 
     &__sidebar {
