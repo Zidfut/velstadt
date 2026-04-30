@@ -67,11 +67,21 @@
     &-tertiary {
         background-color: transparent;
         color: #a7a4b5;
+        gap: 5px;
+
+        .icon {
+            background-color: transparent !important;
+            opacity: 0.6;
+        }
 
         @media(hover: hover) {
             &:hover {
                 background-color: rgba(91, 87, 107, 0.2);
-                color: #fff;       
+                color: #fff;
+
+                .icon {
+                    opacity: 1;
+                }
             }
         }
     }
