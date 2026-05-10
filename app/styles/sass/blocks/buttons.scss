@@ -39,10 +39,19 @@
     &-primary {
         border: none;
         background-color: $violet;
+        gap: 5px;
+
+        .icon {
+            background-color: $violet;
+        }
 
         @media(hover: hover) {
             &:hover {
                 background-color: $violet2;
+
+                .icon {
+                    background-color: $violet2 !important;
+                }
             }
         }
     }
@@ -51,6 +60,10 @@
         background-color: #16141c;
         border: 1px solid #5c5969;
         gap: 5px;
+
+        .icon {
+            background-color: #16141c;
+        }
 
         @media(hover: hover) {
             &:hover {
@@ -87,7 +100,6 @@
     }
 
     .icon {
-        background-color: #16141c;
         background-position: 50%;
         background-repeat: no-repeat;
         width: 20px;
@@ -97,6 +109,11 @@
         &.icon-back {
             background-image: url('../images/dist/arrow-right.svg');
             transform: rotate(180deg);
+        }
+
+        &.icon-download {
+            background-image: url('../images/dist/download-icon.svg');
+            background-color: $violet;
         }
     }
 }

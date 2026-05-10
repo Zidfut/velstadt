@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	window.addEventListener('resize', () => {
-		if (window.innerWidth > 768) {
+		if (window.innerWidth > 1024) {
 			menuBtn.classList.remove('active');
 			headerMenu.classList.remove('active');
 			body.classList.remove('no-scroll');
@@ -341,6 +341,32 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	initTurnstileCF7();
+
+	document.addEventListener('wpcf7mailsent', function(event) {
+
+		const form = event.target;
+
+		const wrapper = form.closest('.report-form-wrapper');
+
+		if (!wrapper) return;
+
+		const fileUrl = wrapper.dataset.report;
+
+		if (!fileUrl) return;
+
+		const link = document.createElement('a');
+
+		link.href = fileUrl;
+
+		link.download = 'report.pdf';
+
+		document.body.appendChild(link);
+
+		link.click();
+
+		document.body.removeChild(link);
+
+	});
 
 	const splideSliders = document.querySelectorAll('.splide');
 
