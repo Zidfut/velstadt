@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		forms.forEach((form) => {
 			const container = form.querySelector('.turnstile-container');
-			const submitBtn = form.querySelector('input[type="submit"]');
+			const submitBtn = form.querySelector('input[type="submit"], button[type="submit"]');
 
 			if (!container || !submitBtn) return;
 
