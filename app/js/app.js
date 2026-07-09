@@ -4,6 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	const headerMenu = document.querySelector('.header__menu-wrapper');
 	const body = document.querySelector('body');
 
+	const dropDownBtn = document.querySelectorAll('.btn-dropdown > a[href="#"]');
+
+	dropDownBtn.forEach(btn => {
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+		}	)
+	})
+
 	menuBtn.addEventListener('click', () => {
 		menuBtn.classList.toggle('active');
 		headerMenu.classList.toggle('active');

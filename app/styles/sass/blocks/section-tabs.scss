@@ -1,0 +1,23 @@
+.section__tabs {
+    margin-bottom: 48px;
+    
+    ul {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        list-style: none;
+        border: 1px solid #343140;
+        border-radius: 10px;
+        padding: 4px;
+        margin: 0;
+        gap: 4px;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .btn.active {
+        background-color: rgba(91, 87, 107, 0.2);
+        color: #fff;
+        pointer-events: none;
+    }
+}

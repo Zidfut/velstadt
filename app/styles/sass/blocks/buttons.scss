@@ -112,4 +112,88 @@
             background-color: $violet;
         }
     }
+
+    &-dropdown {
+        position: relative;
+
+        @media(min-width: 1024px) {
+            &:hover {
+                & > .btn {
+                    background-color: rgba(91, 87, 107, 0.2);
+                    color: #fff;
+    
+                    .icon {
+                        opacity: 1;
+                    }
+                }
+    
+                .dropdown__list {
+                    display: block;
+                }
+            }
+
+            & > .btn {
+                &::after {
+                    content: '';
+                    display: block;
+                    background-position: 50%;
+                    background-repeat: no-repeat;
+                    width: 20px;
+                    height: 20px;
+                    transition: .3s ease;
+                    background-image: url('../images/dist/chevron-down.svg');
+                }
+            }
+        }
+
+        
+        .dropdown__list {
+
+            ul {
+                list-style: none;
+            }
+
+            img {
+                display: none;
+            }
+
+            @media(min-width: 1024px) {
+                min-width: 304px;
+                display: none;
+                position: absolute;
+                z-index: 10;
+                top: 100%;
+                left: 0;
+                padding-top: 32px;
+            
+                &-inner {
+                    border-radius: 8px;
+                    padding: 24px 20px;
+                    background-color: #1e1c26;
+                }
+            
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 2px;
+                    margin-bottom: 24px;
+                    padding: 0;
+                    list-style: none;
+                }
+            
+                .btn {
+                    width: 100%;
+                    text-align: left;
+                    justify-content: start;
+                }
+            
+                img {
+                    display: block;
+                    max-width: 100%;
+                }
+            }
+        }
+
+    }
+
 }
