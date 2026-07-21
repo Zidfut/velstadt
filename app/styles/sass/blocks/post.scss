@@ -466,6 +466,14 @@
         border-bottom: none;
     }
 
+    &__badge {
+        img {
+            display: block;
+            width: 180px;
+            max-width: 100%;
+        }
+    }
+
     .about-client {
         width: 100%;
 
